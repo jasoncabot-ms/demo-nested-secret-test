@@ -7,8 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Output some secret
-        env:
-          USERNAME: ${{ secrets.CREDENTIALS['username'] }}
+      - name: Output Secret
         run: |
-          echo "My username is $USERNAME"
+          echo "Next line has my username"
+          echo '${{ secrets['CREDENTIALS']['username'] }}'
