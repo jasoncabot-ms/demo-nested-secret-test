@@ -44,3 +44,29 @@ echo "$USERNAME" # => ***
 ```
 
 There is an [example GitHub action](.github/workflows/test.yml) that can be run manually from this repository
+
+## Real World Usage
+
+This is really useful when creating a service principal for interacting with **Azure**.
+
+Instead of having to create multiple GitHub secrets for each part (clientId, clientSecret) you can use the code above to extract parts and save them as variables in your workflow, using just one secret, called AZURE_CREDENTIALS, which will also work seamlessly with the Azure CLI.
+
+```
+az ad sp create-for-rbac --sdk-auth
+# Outputs:
+# {
+#   "clientId": "***",
+#   "clientSecret": "***",
+#   "subscriptionId": "***",
+#   "tenantId": "***",
+#   "activeDirectoryEndpointUrl": "***",
+#   "resourceManagerEndpointUrl": "***",
+#   "activeDirectoryGraphResourceId": "***",
+#   "sqlManagementEndpointUrl": "***",
+#   "galleryEndpointUrl": "***",
+#   "managementEndpointUrl": "***"
+# }
+
+```
+
+
