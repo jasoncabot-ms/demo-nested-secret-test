@@ -10,4 +10,5 @@ jobs:
       - name: Output Secret
         run: |
           echo "Next line has my username"
-          echo '${{ secrets['CREDENTIALS']['username'] }}'
+          USERNAME=$(echo '${{ secrets.credentials }}' | jq -r '.username')
+          echo "Username is $USERNAME"
