@@ -12,3 +12,5 @@ jobs:
           echo "Next line has my username"
           USERNAME=$(echo '${{ secrets.credentials }}' | jq -r '.username')
           echo "Username is $USERNAME"
+          echo "::add-mask::$USERNAME"
+          echo "Username is $USERNAME"
