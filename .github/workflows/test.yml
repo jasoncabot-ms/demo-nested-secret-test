@@ -1,0 +1,13 @@
+name: Secrets Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a multi-line script
+        run: |
+          echo "Username = ${{ secrets.CREDENTIALS['username'] }}"
