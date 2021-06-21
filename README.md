@@ -42,3 +42,5 @@ echo "$USERNAME" # => some clever username
 echo "::add-mask::$USERNAME"
 echo "$USERNAME" # => ***
 ```
+
+There is an [example GitHub action](.github/workflows/test.yml) that can be run manually from this repository
